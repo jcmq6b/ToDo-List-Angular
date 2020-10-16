@@ -29,4 +29,15 @@ export class AppComponent {
       }
     }
   }
+
+  // Submitting form and want to add the todo element to the array
+  todoSubmit(form: any){
+    if(form != ""){
+      console.log("submit ");
+      console.log(form);
+      this.todoArray.push(form.todo);
+    }else{
+      alert("ToDo Required");
+    }
+  }
 }
