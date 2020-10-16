@@ -4,6 +4,7 @@
             <h1 class="text-center text-primary">ToDo App</h1>
             <div class="input-group-prepend">
                 <!-- #todo allows angular to access as a variable -->
+                <!-- ngModel adds 2 way binding, creates an instance and binds it to the form element -->
                 <input #todo type="text" class="form-control" placeholder="Add ToDo" name="todo" ngModel>
                 <!-- using the todo as a variable then .value is the DOM elements value (what user typed)-->
                 <span class="input-group-text" (click)="addTodo(todo.value)">
@@ -17,7 +18,7 @@
     <div class="data">
         <ul class="list-unstyled">
             <!-- For loop prints string to display -->
-            <li *ngFor="let todo of todoArray">
+            <li [@moveInLeft] *ngFor="let todo of todoArray">
                 {{todo}} 
                 <i class="material-icons" (click)="deleteTodo(todo)">delete</i>
             </li>
