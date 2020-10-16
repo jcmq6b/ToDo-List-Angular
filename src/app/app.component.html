@@ -13,16 +13,16 @@
                 </span>
             </div>
         </div>
+        
+        <div class="data">
+            <ul class="list-unstyled">
+                <!-- For loop prints string to display -->
+                <li [@moveInLeft] *ngFor="let todo of todoArray">
+                    {{todo}} 
+                    <i class="material-icons" (click)="deleteTodo(todo)">delete</i>
+                </li>
+            </ul>
+        </div>
+    
     </form>
-
-    <div class="data">
-        <ul class="list-unstyled">
-            <!-- For loop prints string to display -->
-            <li [@moveInLeft] *ngFor="let todo of todoArray">
-                {{todo}} 
-                <i class="material-icons" (click)="deleteTodo(todo)">delete</i>
-            </li>
-        </ul>
-    </div>
-
 </div>
