@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-app';
+
+  //This is a global variable, have to use 'this' to reference
+  todoArray = [];
+
+  addTodo(value){
+    if(value!=""){
+      //Places the value onto the array
+      this.todoArray.push(value);
+      console.log(this.todoArray);
+    }else{
+      alert("ToDo field required");
+    }
+  }
 }
