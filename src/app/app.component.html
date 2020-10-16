@@ -17,7 +17,10 @@
     <div class="data">
         <ul class="list-unstyled">
             <!-- For loop prints string to display -->
-            <li *ngFor="let todo of todoArray"> {{todo}} </li>
+            <li *ngFor="let todo of todoArray">
+                {{todo}} 
+                <i class="material-icons" (click)="deleteTodo(todo)">delete</i>
+            </li>
         </ul>
     </div>
 
