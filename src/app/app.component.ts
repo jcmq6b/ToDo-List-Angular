@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +11,16 @@ export class AppComponent {
   //This is a global variable, have to use 'this' to reference
   todoArray = [];
 
+  //Grabbing front end #todoForm and creating a backend variable with it
+  @ViewChild('todoForm', {static: false}) todoForm;
+
   addTodo(value){
     if(value!=""){
       //Places the value onto the array
       this.todoArray.push(value);
       console.log(this.todoArray);
+
+      this.todoForm.resetForm();
     }else{
       alert("ToDo field required");
     }
@@ -36,6 +41,8 @@ export class AppComponent {
       console.log("submit ");
       console.log(form);
       this.todoArray.push(form.todo);
+
+      this.todoForm.resetForm();
     }else{
       alert("ToDo Required");
     }
